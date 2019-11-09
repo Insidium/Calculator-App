@@ -15,18 +15,40 @@
 =end
 
 def get_user_input
-    puts "What's your first number?"
+    puts "Whats your first number?"
     num1 = gets.chomp.to_i
     puts "What's your second number?"
     num2 = gets.chomp.to_i
     return num1, num2
 end
 
-quit = false
+  def sum
+    num1, num2 = get_user_input()
+    result = num1 + num2
+    puts result
+  end
 
-until quit 
+  def subtract
+    num1, num2 = get_user_input()
+    result = num1 - num2
+    puts result
+  end
 
-    puts "Options:"
+  def divide
+    num1, num2 = get_user_input()
+    result = num1 - num2
+    puts result
+  end
+
+  def multiply
+    num1, num2 = get_user_input()
+    result = num1 - num2
+    puts result
+  end
+
+  quit = false
+  until quit do
+    puts "Options"
     puts "1. Sum"
     puts "2. Subtract"
     puts "3. Divide"
@@ -34,30 +56,24 @@ until quit
     puts "5. Square"
     puts "q. Quit"
     user_input = gets.chomp
-
     case user_input
     when "1"
-        num1, num2 = get_user_input()
-        result = num1 + num2
-        puts result
+      sum()
+      result = num1 + num2
+      puts result
     when "2"
-        num1, num2 = get_user_input()
-        result = num1 - num2
-        puts result
+      get_user_input()
+      result = num1 - num2
+      puts result
     when "3"
-        num1, num2 = get_user_input()
-        result = num1 / num2
-        puts result
+      divide()
+      result = num1 / num2
+      puts result
     when "4"
-        num1, num2 = get_user_input()
-        result = num1 * num2
-        puts result
-    when "5"
-        num1, num2 = get_user_input()
-        result = num1 ** num2
-        puts result
+      multiply()
+      result = num1 * num2
+      puts result
     when "q"
-        quit = true
+      quit = true
     end
-
-end
+  end
