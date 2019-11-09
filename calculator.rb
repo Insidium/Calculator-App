@@ -14,6 +14,14 @@
         square
 =end
 
+def get_user_input
+    puts "What's your first number?"
+    num1 = gets.chomp.to_i
+    puts "What's your second number?"
+    num2 = gets.chomp.to_i
+    return num1, num2
+end
+
 quit = false
 
 until quit 
@@ -26,13 +34,27 @@ until quit
     puts "5. Square"
     puts "q. Quit"
     user_input = gets.chomp
+
     case user_input
     when "1"
-        puts "What's your first number?"
-        num1 = gets.chomp.to_i
-        puts "What's your second number?"
-        num2 = gets.chomp.to_i
+        num1, num2 = get_user_input()
         result = num1 + num2
+        puts result
+    when "2"
+        num1, num2 = get_user_input()
+        result = num1 - num2
+        puts result
+    when "3"
+        num1, num2 = get_user_input()
+        result = num1 / num2
+        puts result
+    when "4"
+        num1, num2 = get_user_input()
+        result = num1 * num2
+        puts result
+    when "5"
+        num1, num2 = get_user_input()
+        result = num1 ** num2
         puts result
     when "q"
         quit = true
